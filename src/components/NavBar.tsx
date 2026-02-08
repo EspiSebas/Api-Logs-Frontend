@@ -16,7 +16,6 @@ export default function NavBar() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      {/* Links */}
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto gap-2">
 
@@ -43,6 +42,19 @@ export default function NavBar() {
               }
             >
               Albums
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            <NavLink
+              to="/logs"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-link active fw-semibold"
+                  : "nav-link"
+              }
+            >
+              Logs
             </NavLink>
           </li>
 
