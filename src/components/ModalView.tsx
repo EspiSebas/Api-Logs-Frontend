@@ -1,10 +1,11 @@
+import type { ReactNode } from "react";
 import { Modal, Button } from "react-bootstrap";
 
 interface Props {
   show: boolean;
   onClose: () => void;
   title: string;
-  content: string;
+  content: ReactNode;
 }
 
 export default function ModalView({ show, onClose, title, content }: Props) {

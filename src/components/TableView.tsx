@@ -1,21 +1,7 @@
-import { useState } from "react";
+
 import { Table, Button } from "react-bootstrap";
-import ModalView from "./ModalView";
 
-export default function TableView({ items }:any) {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const handleOpenModal = (item:any) => {
-    setSelectedItem(item);
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedItem(null);
-    setShowModal(false);
-  };
-
+export default function TableView({ items,onUserSelect }:any) { 
   return (
     <>
       <Table striped bordered hover responsive>
@@ -36,7 +22,7 @@ export default function TableView({ items }:any) {
               <td>
                 <Button
                   variant="primary"
-                  onClick={() => handleOpenModal(item)}
+                  onClick={() => onUserSelect(item)}
                 >
                   Ver Detalle
                 </Button>
@@ -45,8 +31,7 @@ export default function TableView({ items }:any) {
           ))}
         </tbody>
       </Table>
-
-      
+     
     </>
   );
 }

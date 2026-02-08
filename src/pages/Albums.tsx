@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { getAlbumByUser } from "../api/externalApi";
 
+interface Album {
+  id: number;
+  title: string;
+}
+
 function Albums() {
   const [userId, setUserId] = useState<number | "">("");
-  const [albums, setAlbums] = useState([]);
+  const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
